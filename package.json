@@ -1,6 +1,7 @@
 {
   "name": "connect4",
   "version": "0.1.0",
+  "homepage": "https://samir70.github.io/connect4", 
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
@@ -8,6 +9,8 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

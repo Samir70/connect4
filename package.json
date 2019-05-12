@@ -1,7 +1,7 @@
 {
   "name": "connect4",
   "version": "0.1.0",
-  "homepage": "https://samir70.github.io/connect4", 
+  "homepage": "https://samir70.github.io/connect4",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
@@ -30,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }

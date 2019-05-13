@@ -1,7 +1,8 @@
 .gameBoard {
-    height: 60vmin;
-    width: 70vmin;
+    height: 78vmin;
+    width: 95vmin;
     display: table;
+    margin: auto;
     justify-self: center;
     border-spacing: 3px;
     background: blue;
@@ -9,8 +10,8 @@
 
 td {
     display: table-cell;
-    width: 9vmin;
-    height: 9vmin;
+    width: 12vmin;
+    height: 12vmin;
     vertical-align: middle;
     justify-self: center;
     border-radius: 50%;

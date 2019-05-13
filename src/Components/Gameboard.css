@@ -1,0 +1,22 @@
+.gameBoard {
+    height: 60vmin;
+    width: 70vmin;
+    display: table;
+    justify-self: center;
+    border-spacing: 3px;
+    background: blue;
+}
+
+td {
+    display: table-cell;
+    width: 9vmin;
+    height: 9vmin;
+    vertical-align: middle;
+    justify-self: center;
+    border-radius: 50%;
+    font-size: 8vmin;
+}
+
+.yellow {background: gold}
+.red {background: mediumvioletred}
+.black {background: black}

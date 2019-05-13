@@ -10,11 +10,10 @@ class App extends React.Component {
   }
 
   render() {
+    var headerCol = this.state.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
     return (
       <div className="App">
-        <header className="App-header">
-          This will be a Connect 4 game!
-        </header>
+        <h1 className={headerCol}>CONNECT -- 4</h1>
         <Gameboard pos={this.state.boardPos} />
       </div>
     );

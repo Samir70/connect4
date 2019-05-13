@@ -1,4 +1,5 @@
 import React from 'react';
+import Gameboard from './Components/Gameboard';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         This will be a Connect 4 game!
       </header>
+      <Gameboard />
     </div>
   );
 }

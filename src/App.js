@@ -1,20 +1,25 @@
 import React from 'react';
 import Gameboard from './Components/Gameboard';
-import {startPos} from './Modules/BoardHandler';
+import {startPos, makeMove} from './Modules/BoardHandler';
 import './App.css';
 
 class App extends React.Component {
   state = {
-    boardPos : startPos, 
-    sideToMove : 'Yellow'
+    boardPos : startPos
   }
 
   moveHandler = (move) => {
-    console.log('move was made: ', move);
+    var currentPos = Object.assign({}, this.state.boardPos);
+    var result = makeMove(currentPos, move);
+    if (result === 'NOT LEGAL') {
+      console.log('need better illegal move notification')
+    } else {
+      this.setState({boardPos: result});
+    }
   }
 
   render() {
-    var headerCol = this.state.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
+    var headerCol = this.state.boardPos.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
     return (
       <div className="App">
         <h1 className={headerCol}>CONNECT -- 4</h1>

@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1 className={headerCol}>CONNECT -- 4</h1>
-        <Gameboard pos={this.state.boardPos} click={this.moveHandler} />
+        <Gameboard pos={this.state.boardPos.pos} click={this.moveHandler} />
       </div>
     );
   }

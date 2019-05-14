@@ -9,12 +9,16 @@ class App extends React.Component {
     sideToMove : 'Yellow'
   }
 
+  moveHandler = (move) => {
+    console.log('move was made: ', move);
+  }
+
   render() {
     var headerCol = this.state.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
     return (
       <div className="App">
         <h1 className={headerCol}>CONNECT -- 4</h1>
-        <Gameboard pos={this.state.boardPos} />
+        <Gameboard pos={this.state.boardPos} click={this.moveHandler} />
       </div>
     );
   }

@@ -4,7 +4,12 @@ import './Gameboard.css';
 const makeTile = (c, i) => {
     var cl = '';
     var k = 'sq'+i;
-    c === 'B' ? cl = 'black' : c==='Y' ? cl = 'yellow' : cl = 'red';
+    switch (c) {      
+      case 'Y' : {cl = 'yellow'; break}
+      case 'R' : {cl = 'red'; break}
+      case 'L' : {cl = 'legal'; break}
+      default : {cl = 'black'}
+    }
     return <td className={cl} key = {k} ></td>
 }
 

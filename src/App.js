@@ -20,6 +20,9 @@ class App extends React.Component {
 
   render() {
     var headerCol = this.state.boardPos.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
+    if (this.state.boardPos.sideToMove.search('won') > 0) {
+      console.log(this.state.boardPos.sideToMove)
+    }
     return (
       <div className="App">
         <h1 className={headerCol}>CONNECT -- 4</h1>

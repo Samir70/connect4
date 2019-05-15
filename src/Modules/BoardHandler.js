@@ -29,9 +29,23 @@ const checkWinning = (b, m) => {
     while (b[c]===b[m]  && c>=0) {maxCol += b[c]; c -= 7}
     c=m+7;
     while (b[c]===b[m]  && c<=41) {maxCol += b[c]; c += 7}
+    
+    var posDiag = b[m]; //positive gradient!!
+    c = m+6;
+    while (b[c]===b[m]  && c<=41 && c%7 !== 6) {posDiag += b[c]; c += 6}
+    c = m-6;
+    while (b[c]===b[m]  && c>0 && c%7 !== 0) {posDiag += b[c]; c -= 6}
 
-    var maxLine = Math.max(maxRow.length, maxCol.length);
-    console.log('maxRow, maxCol', maxRow, maxCol);
+    var negDiag = b[m]; //negative gradient!!
+    c = m+8;
+    while (b[c]===b[m]  && c<=41 && c%7 !== 0) {posDiag += b[c]; c += 8}
+    c = m-8;
+    while (b[c]===b[m]  && c>=0 && c%7 !== 6) {posDiag += b[c]; c -= 8}
+
+
+
+    var maxLine = Math.max(maxRow.length, maxCol.length, posDiag.length, negDiag.length);
+    console.log('maxRow, maxCol, posDiag, negDiag', maxRow, maxCol, posDiag, negDiag);
     return maxLine > 3 ? true : false;
 }
 

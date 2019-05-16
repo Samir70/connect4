@@ -1,5 +1,6 @@
 import React from 'react';
 import Gameboard from './Components/Gameboard';
+import Congrats from './Components/Congrats'
 import {startPos, makeMove} from './Modules/BoardHandler';
 import './App.css';
 
@@ -20,13 +21,12 @@ class App extends React.Component {
 
   render() {
     var headerCol = this.state.boardPos.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
-    if (this.state.boardPos.outCome === 'win') {
-      console.log(this.state.boardPos.sideToMove, ' has won the game!!!!')
-    }
+    
     return (
       <div className="App">
         <h1 className={headerCol}>CONNECT -- 4</h1>
         <Gameboard pos={this.state.boardPos.pos} click={this.moveHandler} />
+        {this.state.boardPos.outCome === 'win' && <Congrats side = {this.state.boardPos.sideToMove} />}
       </div>
     );
   }

@@ -48,8 +48,6 @@ const checkWinning = (b, m) => {
     c = m-8;
     while (b[c]===b[m]  && c>=0 && c%7 !== 6) {negDiag.push(c); c -= 8}
 
-
-
     var maxLine = Math.max(maxRow.length, maxCol.length, posDiag.length, negDiag.length);
     console.log('maxRow, maxCol, posDiag, negDiag', maxRow, maxCol, posDiag, negDiag);
     return maxLine > 3 ? true : false;

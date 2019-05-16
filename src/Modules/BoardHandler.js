@@ -1,9 +1,14 @@
 
+// board positions will have these properties:
+// pos: the colour of each square
 // 6 rows of 7
 // B - for blank (or black)
 // Y, R -- for yellow or red
-// L - for legal moves
+// L - for legal moves, which (during development) are coloured gray
 
+// legalMoves: moves which can be made in this position
+// sideToMove: either 'Yellow' or 'Red'
+// outCome: described as 'win', 'draw', 'onGoing'
 export var startPos = {    
     pos: [
         'BBBBBBB',
@@ -14,7 +19,8 @@ export var startPos = {
         'LLLLLLL'
     ], 
     legalMoves: [35, 36, 37, 38, 39, 40, 41], 
-    sideToMove: 'Yellow'
+    sideToMove: 'Yellow', 
+    outCome: 'onGoing'
 }
 
 const checkWinning = (b, m) => {
@@ -56,11 +62,12 @@ export const makeMove = (position, move) => {
         var boardArray = position.pos.join('').split('');
         boardArray[moveToMake] = position.sideToMove[0];
         position.legalMoves[move%7] -= 7;
-        if (position.legalMoves[move%7] > 0) {
+        if (position.legalMoves[move%7] >= 0) {
             boardArray[position.legalMoves[move%7]] = 'L'
         }
+
         if (checkWinning(boardArray, moveToMake)) {
-            position.sideToMove += ' has won!!!';
+            position.outCome = 'win';
             position.legalMoves = position.legalMoves.map(x=>-1);
         } else {position.sideToMove = position.sideToMove === 'Yellow' ? 'Red' : 'Yellow';}
 

@@ -20,8 +20,8 @@ class App extends React.Component {
 
   render() {
     var headerCol = this.state.boardPos.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
-    if (this.state.boardPos.sideToMove.search('won') > 0) {
-      console.log(this.state.boardPos.sideToMove)
+    if (this.state.boardPos.outCome === 'win') {
+      console.log(this.state.boardPos.sideToMove, ' has won the game!!!!')
     }
     return (
       <div className="App">

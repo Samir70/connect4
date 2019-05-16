@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/connect4/static/css/main.9a6b59d9.chunk.css",
-    "main.js": "/connect4/static/js/main.cd6b801a.chunk.js",
-    "main.js.map": "/connect4/static/js/main.cd6b801a.chunk.js.map",
+    "main.css": "/connect4/static/css/main.ecdd7519.chunk.css",
+    "main.js": "/connect4/static/js/main.6c38c01a.chunk.js",
+    "main.js.map": "/connect4/static/js/main.6c38c01a.chunk.js.map",
     "runtime~main.js": "/connect4/static/js/runtime~main.e9434ad7.js",
     "runtime~main.js.map": "/connect4/static/js/runtime~main.e9434ad7.js.map",
-    "static/js/2.65aa1cca.chunk.js": "/connect4/static/js/2.65aa1cca.chunk.js",
-    "static/js/2.65aa1cca.chunk.js.map": "/connect4/static/js/2.65aa1cca.chunk.js.map",
+    "static/js/2.97294558.chunk.js": "/connect4/static/js/2.97294558.chunk.js",
+    "static/js/2.97294558.chunk.js.map": "/connect4/static/js/2.97294558.chunk.js.map",
     "index.html": "/connect4/index.html",
-    "precache-manifest.3958ca6becfcff8ca8bd2afda77b0b27.js": "/connect4/precache-manifest.3958ca6becfcff8ca8bd2afda77b0b27.js",
+    "precache-manifest.10eeeeb4736e5ae726d007321efd3c92.js": "/connect4/precache-manifest.10eeeeb4736e5ae726d007321efd3c92.js",
     "service-worker.js": "/connect4/service-worker.js",
-    "static/css/main.9a6b59d9.chunk.css.map": "/connect4/static/css/main.9a6b59d9.chunk.css.map"
+    "static/css/main.ecdd7519.chunk.css.map": "/connect4/static/css/main.ecdd7519.chunk.css.map"
   }
 }

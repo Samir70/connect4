@@ -19,12 +19,17 @@ class App extends React.Component {
     }
   }
 
+  restartGame = () => {
+    this.setState({boardPos : startPos})
+  }
+
   render() {
     var headerCol = this.state.boardPos.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
     
     return (
       <div className="App">
         <h1 className={headerCol}>CONNECT -- 4</h1>
+        <button className='restartBtn' onClick={this.restartGame} >New Game</button>
         <Gameboard pos={this.state.boardPos.pos} click={this.moveHandler} />
         {this.state.boardPos.outCome === 'win' && <Congrats side = {this.state.boardPos.sideToMove} />}
       </div>

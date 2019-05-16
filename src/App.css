@@ -9,3 +9,12 @@
 .yellowToPlay {
   color: gold;
 }
+
+.restartBtn {
+  position: fixed;
+  right: 0;
+  top: 0;
+  color: lightskyblue;
+  background: black; 
+  margin: 30px;
+}

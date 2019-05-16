@@ -9,7 +9,7 @@
 // legalMoves: moves which can be made in this position
 // sideToMove: either 'Yellow' or 'Red'
 // outCome: described as 'win', 'draw', 'onGoing'
-export var startPos = {    
+export const startPos = {    
     pos: [
         'BBBBBBB',
         'BBBBBBB',
@@ -56,17 +56,18 @@ const checkWinning = (b, m) => {
 
 export const makeMove = (position, move) => {
     const moveToMake = position.legalMoves[move%7];
+    var lMoves = [...position.legalMoves]
     if (moveToMake >= 0) {
         var boardArray = position.pos.join('').split('');
         boardArray[moveToMake] = position.sideToMove[0];
-        position.legalMoves[move%7] -= 7;
-        if (position.legalMoves[move%7] >= 0) {
-            boardArray[position.legalMoves[move%7]] = 'L'
+        lMoves[move%7] -= 7;
+        if (lMoves[move%7] >= 0) {
+            boardArray[lMoves[move%7]] = 'L'
         }
 
         if (checkWinning(boardArray, moveToMake)) {
             position.outCome = 'win';
-            position.legalMoves = position.legalMoves.map(x=>-1);
+            lMoves = lMoves.map(x=>-1);
         } else {position.sideToMove = position.sideToMove === 'Yellow' ? 'Red' : 'Yellow';}
 
         //Now turn our board back into 6 rows of seven
@@ -74,6 +75,7 @@ export const makeMove = (position, move) => {
         var outBoard = [];
         while (boardArray.length > 0) {outBoard.push(boardArray.splice(0, 7).join(''))}
         position.pos = outBoard;
+        position.legalMoves = lMoves;
 
 
         return position;

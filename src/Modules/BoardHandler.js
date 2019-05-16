@@ -18,29 +18,29 @@ export var startPos = {
 }
 
 const checkWinning = (b, m) => {
-    var maxRow = b[m];
+    var maxRow = [m];
     var c = m-1;
-    while (b[c]===b[m]  && c%7 !== 6) {maxRow += b[c]; c--}
+    while (b[c]===b[m]  && c%7 !== 6) {maxRow.push(c); c--}
     c = m+1;
-    while (b[c]===b[m]  && c%7 !== 0) {maxRow += b[c]; c++}
+    while (b[c]===b[m]  && c%7 !== 0) {maxRow.push(c); c++}
     
-    var maxCol = b[m];
+    var maxCol = [m];
     c= m-7;
-    while (b[c]===b[m]  && c>=0) {maxCol += b[c]; c -= 7}
+    while (b[c]===b[m]  && c>=0) {maxCol.push(c); c -= 7}
     c=m+7;
-    while (b[c]===b[m]  && c<=41) {maxCol += b[c]; c += 7}
+    while (b[c]===b[m]  && c<=41) {maxCol.push(c); c += 7}
     
-    var posDiag = b[m]; //positive gradient!!
+    var posDiag = [m]; //positive gradient!!
     c = m+6;
-    while (b[c]===b[m]  && c<=41 && c%7 !== 6) {posDiag += b[c]; c += 6}
+    while (b[c]===b[m]  && c<=41 && c%7 !== 6) {posDiag.push(c); c += 6}
     c = m-6;
-    while (b[c]===b[m]  && c>0 && c%7 !== 0) {posDiag += b[c]; c -= 6}
+    while (b[c]===b[m]  && c>0 && c%7 !== 0) {posDiag.push(c); c -= 6}
 
-    var negDiag = b[m]; //negative gradient!!
+    var negDiag = [m]; //negative gradient!!
     c = m+8;
-    while (b[c]===b[m]  && c<=41 && c%7 !== 0) {posDiag += b[c]; c += 8}
+    while (b[c]===b[m]  && c<=41 && c%7 !== 0) {negDiag.push(c); c += 8}
     c = m-8;
-    while (b[c]===b[m]  && c>=0 && c%7 !== 6) {posDiag += b[c]; c -= 8}
+    while (b[c]===b[m]  && c>=0 && c%7 !== 6) {negDiag.push(c); c -= 8}
 
 
 

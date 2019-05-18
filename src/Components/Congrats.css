@@ -1,0 +1,24 @@
+
+@keyframes fadeIn {
+    0%   {opacity: 0; transform: translateX(-100%); font-size: 1vmin}
+    100% {opacity: 1; transform: translateX(0%); font-size: 10vmin}
+}
+
+.fancyText {
+    animation: rollingColours 2s linear;
+    animation-iteration-count: infinite;
+    width: 40vw;
+    font-size: 10vmin;
+    position: fixed;
+    top: 30vh;
+    left: 30vw;
+  }
+  
+@keyframes rollingColours {
+  0% {color: silver; transform: translateY(-20%); font-size: 1vmin; opacity: 0}
+  25% {color: blue}
+  50% {opacity: 1}
+  60% {color: violet}
+  90% {color: white; transform: translateY(0%); font-size: 10vmin}
+  100% {color: white; transform: translateY(0%); font-size: 10vmin}
+}

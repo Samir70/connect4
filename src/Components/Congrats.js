@@ -3,9 +3,8 @@ import './Congrats.css';
 
 const Congrats = (props) => {
     return (
-    <div>
-        <p>{props.side} has won!!!!!!!!</p>
-        <h1>Congratulations</h1>
+    <div className='fancyText winNotice' >
+        <p classname='winNotice' >{props.side} <br />has<br />won!!!!!!!!</p>
     </div>
     )
 }

@@ -10,11 +10,16 @@
   color: gold;
 }
 
+h1 {
+  margin: 0px;
+  padding: 1px;
+  font-size: 5vmin;
+}
+
 .restartBtn {
-  position: fixed;
-  right: 0;
-  top: 0;
+  width: 95vmin;
+  height: 11min;
   color: lightskyblue;
   background: black; 
-  margin: 30px;
+  font-size: 5vmin;
 }

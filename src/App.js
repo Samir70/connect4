@@ -24,13 +24,13 @@ class App extends React.Component {
   }
 
   render() {
-    var headerCol = this.state.boardPos.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
+    var moveCol = this.state.boardPos.sideToMove === 'Yellow' ? 'yellowToPlay' : 'redToPlay';
     
     return (
       <div className="App">
-        <h1 className={headerCol}>CONNECT -- 4</h1>
-        <button className='restartBtn' onClick={this.restartGame} >New Game</button>
+        <h1 className={moveCol}>CONNECT -- 4</h1>
         <Gameboard pos={this.state.boardPos.pos} click={this.moveHandler} />
+        <button className='restartBtn' onClick={this.restartGame} >New Game</button>
         {this.state.boardPos.outCome === 'win' && <Congrats side = {this.state.boardPos.sideToMove} />}
       </div>
     );
